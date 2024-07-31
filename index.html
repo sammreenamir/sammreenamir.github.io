@@ -1,352 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV - Sammreen Amir</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f5f2;
+      }
 
+      .container {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20mm;
+        margin-bottom: 1.5rem;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        page-break-after: always;
+      }
+
+      .page {
+        page-break-after: always;
+        margin-bottom: 2rem;
+      }
+
+      header {
+        margin-bottom: 20px;
+      }
+      #main {
+        display: flex;
+        flex-direction: row;
+      }
+      #left {
+        font-weight: bold;
+      }
+      #right {
+        margin-left: 7%;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 30px;
+        border-bottom: 3px solid rgb(189, 189, 189);
+        margin-bottom: 10px;
+      }
+
+      header p {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+
+      header a {
+        color: #1a0dab;
+        text-decoration: none;
+      }
+      #summary {
+        margin-left: 17%;
+        text-align: justify;
+      }
+      #skills {
+        margin-left: 17%;
+      }
+      #skills .hed {
+        font-weight: bold;
+      }
+      .line {
+        font-size: 17px;
+      }
+      .exp-main {
+        width: 80%;
+        margin-left: 1rem;
+        margin-top: 5px;
+      }
+      .exp-main .exp-left {
+        width: 22%;
+        float: left;
+        font-weight: bold;
+      }
+      .exp-main .exp-right {
+        width: 75%;
+        float: right;
+      }
+
+      .exp-right .exp-right-heading {
+        font-weight: bold;
+      }
+      .exp-right .exp-right-content {
+        margin-left: 4%;
+      }
+      .lang-content {
+        margin-left: 1rem;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+
+      section h2 {
+        font-size: 24px;
+        border-bottom: 3px solid rgb(189, 189, 189);
+        margin-bottom: 10px;
+      }
+      hr {
+        width: 95%;
+        border: 1px solid rgb(215, 215, 215);
+      }
+
+      h3,
+      h4,
+      p,
+      ul,
+      li {
+        color: #333;
+      }
+
+      a {
+        color: #1a0dab;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+      .clear {
+        clear: both;
+      }
+      @media screen and (max-width: 506px) {
         .container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            padding: 30px;
-            max-width: 900px;
+          width: 100%;
         }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 20px;
+      }
+      @media screen and (max-width: 680px) {
+        .exp-main {
+          width: 100%;
         }
-
-        .profile-header h1 {
-            font-size: 2.5rem;
-            margin: 0;
+      }
+      @media screen and (max-width: 550px) {
+        .exp-main .exp-left {
+          float: none;
+          width: 100%;
         }
-
-        .profile-header p {
-            font-size: 1.2rem;
-            color: #777;
+        .exp-main .exp-right {
+          float: none;
+          width: 100%;
+          margin-top: 10px;
+          margin-left: 5%;
         }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: #000;
-            border-bottom: 3px solid #000;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            margin-top: 30px;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .contact-info li {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .list-unstyled {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .project-item,
-        .experience-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-left: 4px solid #000;
-            border-radius: 4px;
-        }
-
-        .project-item h5,
-        .experience-item h5 {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .project-item p,
-        .experience-item p {
-            margin-bottom: 5px;
-        }
-
-        .profile-header,
-        .profile-header p,
-        .section-title,
-        .contact-info,
-        .list-unstyled,
-        .project-item,
-        .experience-item {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .profile-header:hover,
-        .profile-header p:hover,
-        .section-title:hover,
-        .contact-info a:hover,
-        .list-unstyled li:hover,
-        .project-item:hover,
-        .experience-item:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            .profile-header h1 {
-                font-size: 2rem;
-            }
-
-            .profile-header p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.25rem;
-            }
-
-            .experience-row {
-                flex-direction: column;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .experience-col {
-                flex: 0 0 31%;
-            }
-        }
-
-        .experience-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .experience-col {
-            flex: 0 0 48%;
-            margin-bottom: 20px;
-        }
-
-        .personal-info {
-            margin-top: 30px;
-        }
-
-        .personal-info p {
-            margin-bottom: 10px;
-        }
+      }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="profile-header">
-                    <h1>Sammreen Amir</h1>
-                </div>
+      <!-- Page 1 -->
+      <div class="page">
+        <header>
+          <h1>Sammreen Amir</h1>
+          <hr />
+          <div id="main">
+            <div id="left">
+              <p>Phone</p>
+              <p>Email</p>
+              <p>Nationality</p>
+              <p>Residence</p>
+              <p>LinkedIn</p>
+              <p>GitHub</p>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="personal-info">
-                    <h2 class="section-title">Personal Information</h2>
-                    <ul class="list-unstyled">
-                        <li><strong>Email:</strong> <a href="mailto:sammreen786@gmail.com">sammreen786@gmail.com</a></li>
-                        <li><strong>Contact:</strong> +92 349 4108411</li>
-                        <li><strong>Country:</strong> Pakistan</li>
-                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sammreenamir/" target="_blank">linkedin.com/in/sammreenamir/</a></li>
-                        <li><strong>GitHub:</strong> <a href="https://github.com/sammreenamir/" target="_blank">github.com/sammreenamir/</a></li>
-                    </ul>
-                </div>
-
-                <section id="about" class="mt-4">
-                    <h2 class="section-title">About Me</h2>
-                    <p>I am a dedicated DevOps Engineer with a strong foundation in web development. My expertise lies in automating deployment processes, managing CI/CD pipelines, and optimizing system performance using tools such as Docker, Nginx, and Ansible. I also bring a solid background in developing visually appealing and responsive user interfaces with HTML, CSS, JavaScript, and Bootstrap, as well as server-side programming with PHP and Laravel.</p>
-                    <p>In my DevOps role, I have successfully implemented and managed automated workflows, ensuring reliable and scalable deployments. My experience with monitoring tools, including ELK Stack, Prometheus, and Grafana, has enhanced my ability to maintain high system reliability and performance.</p>
-                    <p>Passionate about continuous learning, I stay updated with the latest technologies and trends. I thrive in collaborative environments and am dedicated to driving efficiency and excellence in every project. My goal is to leverage my diverse skill set to build and maintain robust infrastructure solutions that support high-quality web applications and ensure seamless operations.</p>
-                </section>
-                
-               <section id="experience" class="mt-4">
-    <h2 class="section-title">Work Experience</h2>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="experience-item mb-3">
-                <h5>Associate DevOps Engineer</h5>
-                <p><em>05/2024 – Current</em></p>
-                <ul class="list-unstyled">
-                    <li>Adan IT Center, Gujrat, Pakistan</li>
-                    <li>Automated deployment processes</li>
-                    <li>Monitored system performance and implemented optimizations</li>
-                </ul>
+            <div id="right">
+              <p style="font-family: sans-serif">+92 349 4108411 (Mobile)</p>
+              <p>
+                <a href="mailto:sammreen786@gmail.com">sammreen786@gmail.com</a>
+              </p>
+              <p>Pakistani</p>
+              <p>Pakistan</p>
+              <p>
+                <a href="https://linkedin.com/in/sammreenamir"
+                  >linkedin.com/in/sammreenamir</a
+                >
+              </p>
+              <p>
+                <a href="https://github.com/sammreenamir/" target="_blank">github.com/sammreenamir/</a>
+              </p>
             </div>
-            <div class="experience-item mb-3">
-                <h5>Full Stack Web Developer</h5>
-                <p><em>01/12/2023 – Current</em></p>
-                <ul class="list-unstyled">
-                    <li>Adan IT Center, Gujrat, Pakistan</li>
-                    <li>Full Stack Web Development (Laravel PHP)</li>
-                    <li>Web Trainer</li>
-                </ul>
-            </div>
-            <div class="experience-item mb-3">
-                <h5>Full Stack Web Developer</h5>
-                <p><em>04/2023 – 10/2023</em></p>
-                <ul class="list-unstyled">
-                    <li>ITS (Information Technology Skills), Gujrat, Pakistan</li>
-                    <li>Full Stack Web Development</li>
-                    <li>Training for Final Year Projects</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-                <section id="education" class="mt-4">
-                    <h2 class="section-title">Education</h2>
-                    <div class="project-item">
-                        <h5>Bachelor of Science (BS) in Computer Science</h5>
-                        <p><em>10/2019 – 06/2023</em></p>
-                        <ul class="list-unstyled">
-                            <li>Gujrat Institute of Management Sciences (GIMS), Arid Agriculture University</li>
-                            <li>CGPA: 3.80</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section id="projects" class="mt-4">
-                    <h2 class="section-title">Projects</h2>
-                     <div class="project-item">
-                        <h5>WooQLaw</h5>
-                        <p><em>05/2023 – Current</em></p>
-                        <p>A website providing legal services and resources.</p>
-                        <ul class="list-unstyled">
-                            <li>Contributed as SRS Documentation Specialist</li>
-                        </ul>
-                    </div>
-                    <div class="project-item">
-                        <h5>PakWeddings</h5>
-                        <p><em>09/2023 – 04/2024</em></p>
-                        <p>PakWeddings.net is a Muslim matrimonial service provider, helping Muslims around the world to find suitable life partners.</p>
-                        <ul class="list-unstyled">
-                            <li>Contributed as Junior Web Developer</li>
-                        </ul>
-                    </div>
-                    <div class="project-item">
-                        <h5>Organic Glow</h5>
-                        <p><em>11/2023 – 12/2023</em></p>
-                        <p>An ecommerce multivendor website for beauty products.</p>
-                        <ul class="list-unstyled">
-                            <li>Contributed as a Project Lead (Full Stack Developer)</li>
-                        </ul>
-                    </div>
-                    <div class="project-item">
-                        <h5>Swap Hub</h5>
-                        <p><em>09/2023 – 11/2023</em></p>
-                        <p>An ecommerce website for the barter system (exchange of goods).</p>
-                        <ul class="list-unstyled">
-                            <li>Contributed as a Project Lead (Full Stack Web Developer)</li>
-                        </ul>
-                    </div>
-                    <div class="project-item">
-                        <h5>GIMS Learning Hub</h5>
-                        <p><em>04/2023 – 05/2023</em></p>
-                        <p>A Learning Management System (LMS) for GIMS students.</p>
-                        <ul class="list-unstyled">
-                            <li>Contributed as a Solo Member</li>
-                        </ul>
-                    </div>
-                    <div class="project-item">
-                        <h5>Journey Ease</h5>
-                        <p><em>07/2023 – 09/2023</em></p>
-                        <p>A website for managing tourism and tours for tourists.</p>
-                        <ul class="list-unstyled">
-                            <li>Contributed as a Project Lead (Full Stack Web Developer)</li>
-                        </ul>
-                    </div>                </section>
-
-             <section id="technical-skills" class="mt-4">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="list-unstyled">
-                <li><strong>Programming Languages:</strong> C, C++, Java, Python, Bash, PowerShell, HTML, CSS, JavaScript, PHP</li>
-                <li><strong>Frameworks:</strong> Bootstrap, Laravel</li>
-                <li><strong>Containerization & Web Servers:</strong> Docker, Nginx</li>
-                <li><strong>Database:</strong> MS SQL Server, MySQL</li>
-                <li><strong>Operating Systems:</strong> AlmaLinux, Windows, Ubuntu</li>
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <ul class="list-unstyled">
-                <li><strong>Monitoring & Logging:</strong> ELK Stack (Elasticsearch, Logstash, Kibana), Prometheus, Grafana, Metricbeat</li>
-                <li><strong>Configuration Management:</strong> Ansible, Chef</li>
-                <li><strong>Cloud Platforms:</strong> Azure</li>
-                <li><strong>Version Control:</strong> Git, GitHub</li>
-                <li><strong>Agile & DevOps Practices:</strong> Scrum,CI/CD (Continuous Integration, Continuous Delivery)</li>
-                <li><strong>Other:</strong> Microsoft Office, Graphic Design and Layout</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section id="soft-skills" class="mt-4">
-    <h2 class="section-title">Soft Skills</h2>
-    <ul class="list-unstyled">
-        <li>Team Leadership</li>
-        <li>Project Management</li>
-        <li>Communication</li>
-        <li>Problem Solving</li>
-    </ul>
-</section>
-
-
-
-                <section id="languages" class="mt-4">
-                    <h2 class="section-title">Languages</h2>
-                    <ul class="list-unstyled">
-                        <li>English (Fluent)</li>
-                        <li>Urdu (Native)</li>
-                    </ul>
-                </section>
-
-            </div>
-        </div>
+          </div>
+        </header>
+        <section>
+          <h2>Summary</h2>
+          <hr />
+          <div id="summary">
+            <p>
+              I am a dedicated DevOps Engineer with a strong foundation in web
+              development. My expertise lies in automating deployment processes,
+              managing CI/CD pipelines, and optimizing system performance using
+              tools such as Docker, Nginx, and Ansible. I also bring a solid
+              background in developing visually appealing and responsive user
+              interfaces with HTML, CSS, JavaScript, and Bootstrap, as well as
+              server-side programming with PHP and Laravel.
+            </p>
+            <p>
+              In my DevOps role, I have successfully implemented and managed
+              automated workflows, ensuring reliable and scalable deployments.
+              My experience with monitoring tools, including ELK Stack,
+              Prometheus, and Grafana, has enhanced my ability to maintain high
+              system reliability and performance.
+            </p>
+            <p>
+              Passionate about continuous learning, I stay updated with the
+              latest technologies and trends. I thrive in collaborative
+              environments and am dedicated to driving efficiency and excellence
+              in every project. My goal is to leverage my diverse skill set to
+              build and maintain robust infrastructure solutions that support
+              high-quality web applications and ensure seamless operations.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2>Skills</h2>
+          <hr />
+          <div id="skills">
+            <p>
+              <span class="hed">Technical Skills</span>
+              <br />
+              <span class="hed">Programming Languages:</span> C
+              <span class="line">|</span> C++ <span class="line">|</span> Java
+              <span class="line">|</span> Python
+              <span class="line">|</span> Bash
+              <span class="line">|</span> PowerShell
+              <span class="line">|</span> HTML <span class="line">|</span> CSS
+              <span class="line">|</span> JavaScript
+              <span class="line">|</span> PHP
+              <br />
+              <span class="hed">Frameworks:</span> Bootstrap
+              <span class="line">|</span> Laravel
+              <br />
+              <span class="hed">Containerization & Web Servers:</span> Docker
+              <span class="line">|</span> Nginx
+              <br />
+              <span class="hed">Database:</span> MS SQL Server
+              <span class="line">|</span> MySQL
+              <br />
+              <span class="hed">Operating Systems:</span> AlmaLinux
+              <span class="line">|</span> Windows
+              <span class="line">|</span> Ubuntu
+              <br />
+              <span class="hed">Monitoring & Logging:</span> ELK Stack
+              (Elasticsearch, Logstash, Kibana)
+              <span class="line">|</span> Prometheus
+              <span class="line">|</span> Grafana
+              <span class="line">|</span> Metricbeat
+              <br />
+              <span class="hed">Configuration Management:</span> Ansible
+              <span class="line">|</span> Chef
+              <br />
+              <span class="hed">Cloud Platforms: </span> Azure
+              <br />
+              <span class="hed">Version Control:</span> Git
+              <span class="line">|</span> GitHub
+              <br />
+              <span class="hed">Agile & DevOps Practices:</span> Scrum
+              <span class="line">|</span> CI (Continuous Integration)
+              <span class="line">|</span> CD (Continuous Delivery)
+              <br />
+              <span class="hed">Other:</span> Microsoft Office
+              <span class="line">|</span> Graphic Design and Layout
+            </p>
+            <p>
+              <span class="hed">Soft Skills</span>
+              <br />
+              <span class="hed"
+                >Excellent team player and Experienced in Agile workplaces</span
+              >
+              <br />
+              <span>Focused and consistent with sharp attention to detail</span>
+              <br />
+              <span>Ability to work independently or as part of a team</span>
+              <br />
+              <span>Excellent communication and written skills</span>
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-        integrity="sha384-eMNrsP0dY62RV7tFJCFQ19k6SgSV+GI9IDYjykI/lqOa8r+ISVVf2R5PUE68X8Dh" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGfniC2cI+6jK7t2IWikD3zDgfQ/TtTqGR0UjUq8nB+1gF0yYnsI5TktVS9"
-        crossorigin="anonymous">
-    </script>
-</body>
+    <div class="container">
+      <div class="page">
+        <section>
+          <h2>Experience</h2>
+          <hr />
+          <div class="exp-main" style="margin-top: 2rem">
+            <div class="exp-left">
+              <span>April 2024 – Present</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">Associate DevOps Engineer</span>
+              <br />
+              <span class="exp-right-content">
+                - Adan IT Center, Gujrat, Pakistan
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Monitored system performance and implemented optimizations
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>December 2023 – Present</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">Full Stack Web Developer</span>
+              <br />
+              <span class="exp-right-content">
+                - Adan IT Center, Gujrat, Pakistan
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Full Stack Web Development (Laravel PHP)
+              </span>
+              <br />
+              <span class="exp-right-content"> - Web Trainer </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>April 2023 – October 2023</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">Full Stack Web Developer</span>
+              <br />
+              <span class="exp-right-content">
+                - ITS (Information Technology Skills), Gujrat, Pakistan
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Full Stack Web Development
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Training for Final Year Projects
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </section>
+        <section>
+          <h2>Projects</h2>
+          <hr />
+          <div class="exp-main" style="margin-top: 2rem">
+            <div class="exp-left">
+              <span>May 2023 – Present</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">WooQLaw</span>
+              <br />
+              <span class="exp-right-content">
+                - A website providing legal services and resources.
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Contributed as SRS Documentation Specialist
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
 
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>September 2023 – April 2024</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">PakWeddings</span>
+              <br />
+              <span class="exp-right-content">
+                - PakWeddings.net is a Muslim matrimonial service provider,
+                helping Muslims around the world to find suitable life partners.
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Contributed as Junior Web Developer
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>November 2023 – December 2023</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">Organic Glow</span>
+              <br />
+              <span class="exp-right-content">
+                - An ecommerce multivendor website for beauty products.
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Worked as a Project Lead (Full Stack Developer)
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>September 2023 – November 2023</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">Swap Hub</span>
+              <br />
+              <span class="exp-right-content">
+                - An ecommerce website for the barter system (exchange of
+                goods).
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - worked as a Project Lead (Full Stack Web Developer)
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>April 2023 – May 2023</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">GIMS Learning Hub</span>
+              <br />
+              <span class="exp-right-content">
+                - A Learning Management System (LMS) for GIMS students.
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - worked as a Solo Member
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="exp-main">
+            <div class="exp-left">
+              <span>August 2023 – September 2023</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading">Journey Ease</span>
+              <br />
+              <span class="exp-right-content">
+                - A website for managing tourism and tours for tourists.
+              </span>
+              <br />
+              <span class="exp-right-content">
+                - Worked as a Project Lead (Full Stack Web Developer)
+              </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <hr />
+          <div class="exp-main" style="margin-top: 2rem">
+            <div class="exp-left">
+              <span>October 2019 – June 2023</span>
+            </div>
+            <div class="exp-right">
+              <span class="exp-right-heading"
+                >Bachelor of Science (BS) in Computer Science</span
+              >
+              <br />
+              <span class="exp-right-content">
+                - Gujrat Institute of Management Sciences (GIMS), Arid
+                Agriculture University
+              </span>
+              <br />
+              <span class="exp-right-content"> - CGPA: 3.80 </span>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section>
+          <h2>Languages</h2>
+          <hr />
+          <p class="lang-content">- English (Fluent)</p>
+          <p class="lang-content">- Urdu (Native)</p>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
